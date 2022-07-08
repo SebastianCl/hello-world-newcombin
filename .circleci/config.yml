@@ -28,6 +28,12 @@ jobs:
 
 workflows:
   test_zip:
+    triggers:
+      - schedule:
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - setup_git
       - create_zip:
