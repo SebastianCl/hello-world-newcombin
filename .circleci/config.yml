@@ -35,7 +35,6 @@ workflows:
             branches:
               only:
                 - master
-                - test
     jobs:
       - setup_git
       - create_zip:
