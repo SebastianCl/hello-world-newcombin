@@ -28,3 +28,5 @@ workflows:
     jobs:
       - setup_git
       - create_zip
+          requires:
+            - test 
