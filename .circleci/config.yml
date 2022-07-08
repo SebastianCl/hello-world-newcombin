@@ -27,14 +27,14 @@ jobs:
 
 
 workflows:
-  test_zip:
-    triggers:
-      - schedule:
-          cron: "0 0 * * *"
-          filters:
-            branches:
-              only:
-                - master
+#  test_zip:
+#    triggers:
+#      - schedule:
+#          cron: "0 0 * * *"
+#          filters:
+#            branches:
+#              only:
+#                - master
     jobs:
       - setup_git
       - create_zip:
