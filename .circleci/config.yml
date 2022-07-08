@@ -30,7 +30,6 @@ workflows:
   test_zip:
     triggers:
       - schedule:
-          cron: "* * * * *"
           filters:
             branches:
               only:
