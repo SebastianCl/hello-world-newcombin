@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: circleci/node:12.16
     steps:
+      - checkout
       - run: echo "Crear tag"
       - run: git config --global user.email "<< pipeline.id >>@correo.com"
       - run: git config --global user.name "<< pipeline.id >>"
