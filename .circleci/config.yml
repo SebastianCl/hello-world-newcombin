@@ -11,7 +11,7 @@ jobs:
       - run: git config --global user.name "<< pipeline.id >>"
       - run: git tag -a << pipeline.id >> -m 'version << pipeline.id >>'
       - run: git tag
-      - run: git remote add https://github.com/SebastianCl/hello-world-newcombin.git
+      - run: git remote add origin https://github.com/SebastianCl/hello-world-newcombin.git
       - run: git push --tags
 
   create_zip:
@@ -29,7 +29,7 @@ jobs:
 
 
 workflows:
-  test_zip:
+  challenge_3:
 #    triggers:
 #      - schedule:
 #          cron: "0 0 * * *"
