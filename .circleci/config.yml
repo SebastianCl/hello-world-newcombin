@@ -11,6 +11,8 @@ jobs:
       - run: git config --global user.name "<< pipeline.id >>"
       - run: git tag -a << pipeline.id >> -m 'version << pipeline.id >>'
       - run: git tag
+      - run: git remote add https://github.com/SebastianCl/hello-world-newcombin.git
+      - run: git push --tags
 
   create_zip:
     docker:
@@ -27,7 +29,7 @@ jobs:
 
 
 workflows:
-  challenge_3:
+  test_zip:
 #    triggers:
 #      - schedule:
 #          cron: "0 0 * * *"
