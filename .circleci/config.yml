@@ -27,7 +27,7 @@ jobs:
 
 
 workflows:
-#  test_zip:
+  challenge_3:
 #    triggers:
 #      - schedule:
 #          cron: "0 0 * * *"
