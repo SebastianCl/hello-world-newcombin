@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  create_zip:
+    docker:
+      - image: circleci/node:12.16
+    steps:
+      - checkout
+      - run: echo "Crar ZIP"
+      - run: sudo apt-get install zip
+      - run: zip -r helloworld.zip .
+      - run: ls
+
+workflows:
+  test_zip:
+    jobs:
+      - create_zip
