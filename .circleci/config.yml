@@ -22,8 +22,8 @@ jobs:
       - run: zip -r helloworld.zip .
       - run: ls
       - store_artifacts:
-        path: helloworld.zip
-        destination: artifact-file
+          path: ./helloworld.zip
+          destination: artifact-file
 
 
 workflows:
