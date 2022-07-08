@@ -1,21 +1,29 @@
 version: 2.1
 
 jobs:
+  setup_git:
+    docker:
+      - image: circleci/node:12.16
+    steps:
+      - run: echo "Crear tag"
+      - run: git config --global user.email "<< pipeline.id >>@correo.com"
+      - run: git config --global user.name "<< pipeline.id >>"
+      - run: git tag -a << pipeline.id >> -m 'version << pipeline.id >>'
+      - run: git tag
+
   create_zip:
     docker:
       - image: circleci/node:12.16
     steps:
       - checkout
-      - run: echo "Crear tag y zip"
-      - run: git config --global user.email "<< pipeline.id >>@correo.com"
-      - run: git config --global user.name "<< pipeline.id >>"
-      - run: git tag -a << pipeline.id >> -m 'version << pipeline.id >>'
-      - run: git tag
+      - run: echo "Crear zip"
       - run: sudo apt-get install zip
       - run: zip -r helloworld.zip .
       - run: ls
 
+
 workflows:
   test_zip:
     jobs:
+      - setup_git
       - create_zip
