@@ -28,13 +28,13 @@ jobs:
 
 workflows:
   challenge_3:
-    triggers:
-      - schedule:
-          cron: "0 0 * * *"
-          filters:
-            branches:
-              only:
-                - test
+#    triggers:
+#      - schedule:
+#          cron: "0 0 * * *"
+#          filters:
+#            branches:
+#              only:
+#                - master
     jobs:
       - setup_git
       - create_zip:
