@@ -7,6 +7,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Crear tag y zip"
+      - run: git config --global user.email "<< pipeline.id >>@correo.com"
+      - run: git config --global user.name "<< pipeline.id >>"
       - run: git tag -a << pipeline.id >> -m 'version << pipeline.id >>'
       - run: git tag
       - run: sudo apt-get install zip
