@@ -23,7 +23,7 @@ jobs:
       - run: ls
       - store_artifacts:
           path: ./helloworld.zip
-          destination: artifact-file
+          destination: << pipeline.id >>
 
 
 workflows:
