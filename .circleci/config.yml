@@ -27,6 +27,6 @@ workflows:
   test_zip:
     jobs:
       - setup_git
-      - create_zip
+      - create_zip:
           requires:
-            - test 
+            - test
